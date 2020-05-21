@@ -1,11 +1,40 @@
 {
-  "name": "Getting Started Example",
-  "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["storage"],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "manifest_version": 2
+	"name": "__MSG_appName__",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "__MSG_appDescription__",
+	"icons": {
+		"16": "images/icon-16.png",
+		"128": "images/icon-128.png"
+	},
+	"default_locale": "en",
+	"background": {
+    "page": "background/sourceDetecotor.html"
+	},
+	"permissions": [
+    "contextMenus",
+    "notifications",
+    "webRequestBlocking",
+    "storage",
+    "cookies",
+    "activeTab",
+		"webRequest",
+		"<all_urls>",
+		"background",
+		"downloads",
+		"tabs"
+	],
+	"options_ui": {
+		"page": "options/index.html",
+		"chrome_style": true
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "images/icon-19.png",
+			"38": "images/icon-38.png"
+		},
+		"default_title": "source detector",
+		"default_popup": "popup/index.html"
+	},
+  "content_security_policy": "style-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net;script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self' ;"
 }
